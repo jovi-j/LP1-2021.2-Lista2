@@ -9,34 +9,43 @@ using std::distance;
 using std::sort;
 
 
-/*
-Caso queira usar sua implementação substitua aqui pelas respostas da questão all_any_none_of
-*/
+/**
+ * TODO: documentação no estilo doxygen
+ */
 template<class InputIt, class UnaryPredicate>
 bool all_of(InputIt first, InputIt last, UnaryPredicate p)
 {
-    // TODO
-    return false;
+    if (first == last && !p(*first))
+        return false;
+
+    for (; first != last; ++first)
+        if (!p(*first))
+            return false;
+    return true;
 }
 
-/*! 
+/**
  * TODO: documentação no estilo doxygen
  */
 template<class InputIt, class UnaryPredicate>
 bool any_of(InputIt first, InputIt last, UnaryPredicate p)
 {
-    // TODO
+    for (; first != last; ++first)
+        if (p(*first))
+            return true;
     return false;
 }
 
-/*! 
+/**
  * TODO: documentação no estilo doxygen
  */
 template<class InputIt, class UnaryPredicate>
 bool none_of(InputIt first, InputIt last, UnaryPredicate p)
 {
-    // TODO
-    return false;
+    for (; first != last; ++first)
+        if (p(*first))
+            return false;
+    return true;
 }
 
 #endif

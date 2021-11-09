@@ -3,9 +3,9 @@
 
 #include <algorithm>
 
-Cadastro::Cadastro(std::string nome){
+Cadastro::Cadastro(std::string sigla, std::string nome){
     m_nome = nome;
-    /*nada a fazer*/
+    m_sigla = sigla;
 }
 
 void Cadastro::adicionaPessoa(Pessoa *p){
@@ -43,4 +43,8 @@ Pessoa* Cadastro::encontraPessoa(std::string cpf){
  */
 void Cadastro::limpaCadastro(){
     m_cadastrados.clear();
+}
+
+std::string Cadastro::getSigla(){
+    return m_sigla;
 }

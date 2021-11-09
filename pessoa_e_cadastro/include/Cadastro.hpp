@@ -12,12 +12,13 @@ class Cadastro{
     private:
         std::vector<Pessoa*> m_cadastrados; //<! lista de pessoas cadastradas
         std::string m_nome; //<! nome do cadastro
+        std::string m_sigla; //<! nome do cadastro
     public:
         /**
          * Construtor padrão
          * @param nome o nome do cadastro em questão
          */
-        Cadastro(std::string nome);
+        Cadastro(std::string sigla, std::string nome);
 
         /**
          * Adiciona uma nova pessoa aos cadastrados
@@ -45,5 +46,8 @@ class Cadastro{
          */
         void limpaCadastro();
 
+        std::string getSigla();
+
+        void setSigla(std::string sigla);
 };
 #endif // Cadastro_hpp
