@@ -68,5 +68,17 @@ class Rua{
          * @return o endereço no formato: Rua <nome>, No. <numero_casa>, Cep: <CEP>
          **/
         std::string endereco(std::string nome);
+
+        /**
+         * Retorna todas as casas do lado A da rua.
+         * @return um vetor contendo todas as casas do lado A da rua
+         **/
+        std::vector<Casa> getA();
+
+        /**
+         * Retorna todas as casas do lado B da rua.
+         * @return um vetor contendo todas as casas do lado B da rua
+         **/
+        std::vector<Casa> getB();
 };
 #endif //Rua_hpp
